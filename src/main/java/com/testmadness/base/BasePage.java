@@ -65,8 +65,8 @@ public class BasePage
 		}
 		else if(browser.equals("IEXPLORER"))
 		{
-			//System.setProperty("webdriver.ie.driver", "C:/absolute/path/to/binary/IEDriverServer.exe");
-			WebDriverManager.iedriver().arch64().setup();
+			System.setProperty("webdriver.ie.driver", "C:/absolute/path/to/binary/IEDriverServer.exe");
+			//WebDriverManager.iedriver().arch64().setup();
 /*			DesiredCapabilities caps = DesiredCapabilities.internetExplorer(); 
 			caps.setCapability(InternetExplorerDriver.INITIAL_BROWSER_URL, "");
 			caps.setCapability(InternetExplorerDriver.LOG_LEVEL, "DEBUG");
@@ -77,8 +77,8 @@ public class BasePage
 		}
 		else if(browser.equals("FIREFOX"))
 		{
-			//System.setProperty("webdriver.gecko.driver", Config.getProp().getProperty("webdriver.firefox.driver"));
-			WebDriverManager.firefoxdriver().arch32().setup();
+			System.setProperty("webdriver.gecko.driver", Config.getProp().getProperty("webdriver.firefox.driver"));
+			//WebDriverManager.firefoxdriver().arch32().setup();
 			driver = new FirefoxDriver();
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(pageTimeOutWait, TimeUnit.SECONDS);
@@ -87,8 +87,8 @@ public class BasePage
 		}
 		else if(browser.equals("CHROME"))
 		{	
-			//System.setProperty("webdriver.chrome.driver", Config.getProp().getProperty("webdriver.chrome.driver"));
-			WebDriverManager.chromedriver().setup();	// - https://github.com/bonigarcia/webdrivermanager
+			System.setProperty("webdriver.chrome.driver", Config.getProp().getProperty("webdriver.chrome.driver"));
+			//WebDriverManager.chromedriver().setup();	// - https://github.com/bonigarcia/webdrivermanager
 			//WebDriverManager.chromedriver().version("2.36").setup();	// - https://github.com/bonigarcia/webdrivermanager
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--start-maximized");

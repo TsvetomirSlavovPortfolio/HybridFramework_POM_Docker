@@ -26,4 +26,15 @@ http://www.mkyong.com/maven/create-a-fat-jar-file-maven-shade-plugin/
 http://www.mkyong.com/maven/maven-create-a-fat-jar-file-one-jar-example/
 
 
+Dockerfile
+FROM openjdk:jdk-alpine
+EXPOSE 8080
+ADD . /
+ENTRYPOINT ["java","-jar","HybridFramework-0.0.1-SNAPSHOT-jar-with-dependencies.jar", "testng.xml"]
+
+
+
+docker build -t hybrid:2 .
+docker run hybrid:2
+
 
