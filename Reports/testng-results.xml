@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="1" failed="2" total="3" passed="0">
+  <reporter-output>
+  </reporter-output>
+  <suite name="suite of suites" duration-ms="0" started-at="2018-04-04T17:59:27Z" finished-at="2018-04-04T17:59:27Z">
+    <groups>
+    </groups>
+  </suite> <!-- suite of suites -->
+  <suite name="NewTours_3" duration-ms="104844" started-at="2018-04-04T17:57:42Z" finished-at="2018-04-04T17:59:27Z">
+    <groups>
+    </groups>
+    <test name="New Tours Test Execution" duration-ms="104844" started-at="2018-04-04T17:57:42Z" finished-at="2018-04-04T17:59:27Z">
+      <class name="com.testmadness.testcase.BookFlightTest">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.testmadness.testcase.BookFlightTest@38cccef]" name="beforeClass" is-config="true" duration-ms="1661" started-at="2018-04-04T23:27:42Z" finished-at="2018-04-04T23:27:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="fReadParameters(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.testmadness.testcase.BookFlightTest@38cccef]" name="fReadParameters" is-config="true" duration-ms="148" started-at="2018-04-04T23:27:43Z" finished-at="2018-04-04T23:27:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ilbq7890.eaas.amdocs.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[28501]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Extra Param Value]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fReadParameters -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.testmadness.testcase.BookFlightTest@38cccef]" name="beforeMethod" is-config="true" duration-ms="192" started-at="2018-04-04T23:27:44Z" finished-at="2018-04-04T23:27:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.testmadness.testcase.BookFlightTest.firstTestCase()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="FAIL" signature="firstTestCase()[pri:0, instance:com.testmadness.testcase.BookFlightTest@38cccef]" name="firstTestCase" duration-ms="102829" started-at="2018-04-04T23:27:44Z" finished-at="2018-04-04T23:29:27Z">
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[Unable to parse remote response: <html>
+<head><title>502 Bad Gateway</title></head>
+<body bgcolor="white">
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx/1.10.3 (Ubuntu)</center>
+</body>
+</html>
+
+Build info: version: 'unknown', revision: 'unknown', time: 'unknown'
+System info: host: 'CAPTAIN', ip: '172.22.80.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_101'
+Driver info: driver.version: RemoteWebDriver]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: Unable to parse remote response: <html>
+<head><title>502 Bad Gateway</title></head>
+<body bgcolor="white">
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx/1.10.3 (Ubuntu)</center>
+</body>
+</html>
+
+Build info: version: 'unknown', revision: 'unknown', time: 'unknown'
+System info: host: 'CAPTAIN', ip: '172.22.80.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_101'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:353)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:159)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:637)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:250)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:236)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:137)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at com.testmadness.base.BasePage.getDriver(BasePage.java:107)
+	at com.testmadness.base.BasePage.<init>(BasePage.java:55)
+	at com.testmadness.pages.HomePage.<init>(HomePage.java:14)
+	at com.testmadness.testcase.BookFlightTest.firstTestCase(BookFlightTest.java:54)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- firstTestCase -->
+        <test-method status="FAIL" signature="afterMethod()[pri:0, instance:com.testmadness.testcase.BookFlightTest@38cccef]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-04-04T23:29:27Z" finished-at="2018-04-04T23:29:27Z">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+	at com.testmadness.testcase.BookFlightTest.afterMethod(BookFlightTest.java:92)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:786)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- com.testmadness.testcase.BookFlightTest -->
+    </test> <!-- New Tours Test Execution -->
+  </suite> <!-- NewTours_3 -->
+  <suite name="NewTours_2" duration-ms="93" started-at="2018-04-04T17:57:42Z" finished-at="2018-04-04T17:57:42Z">
+    <groups>
+    </groups>
+    <test name="New Tours Test Execution" duration-ms="93" started-at="2018-04-04T17:57:42Z" finished-at="2018-04-04T17:57:42Z">
+      <class name="com.testmadness.testcase.BookFlightTest">
+        <test-method status="FAIL" signature="beforeClass()[pri:0, instance:com.testmadness.testcase.BookFlightTest@5f8ed237]" name="beforeClass" is-config="true" duration-ms="0" started-at="2018-04-04T23:27:42Z" finished-at="2018-04-04T23:27:42Z">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[key can't be null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: key can't be null
+	at java.lang.System.checkKey(Unknown Source)
+	at java.lang.System.setProperty(Unknown Source)
+	at com.testmadness.testcase.BookFlightTest.beforeClass(BookFlightTest.java:101)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:175)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:107)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="SKIP" signature="fReadParameters(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.testmadness.testcase.BookFlightTest@5f8ed237]" name="fReadParameters" is-config="true" duration-ms="0" started-at="2018-04-04T23:27:42Z" finished-at="2018-04-04T23:27:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fReadParameters -->
+        <test-method status="SKIP" signature="afterMethod()[pri:0, instance:com.testmadness.testcase.BookFlightTest@5f8ed237]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-04-04T23:27:42Z" finished-at="2018-04-04T23:27:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="SKIP" signature="firstTestCase()[pri:0, instance:com.testmadness.testcase.BookFlightTest@5f8ed237]" name="firstTestCase" duration-ms="0" started-at="2018-04-04T23:27:42Z" finished-at="2018-04-04T23:27:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- firstTestCase -->
+        <test-method status="SKIP" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.testmadness.testcase.BookFlightTest@5f8ed237]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-04-04T23:27:42Z" finished-at="2018-04-04T23:27:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+      </class> <!-- com.testmadness.testcase.BookFlightTest -->
+    </test> <!-- New Tours Test Execution -->
+  </suite> <!-- NewTours_2 -->
+  <suite name="NewTours_1" duration-ms="104843" started-at="2018-04-04T17:57:42Z" finished-at="2018-04-04T17:59:27Z">
+    <groups>
+    </groups>
+    <test name="New Tours Test Execution" duration-ms="104843" started-at="2018-04-04T17:57:42Z" finished-at="2018-04-04T17:59:27Z">
+      <class name="com.testmadness.testcase.BookFlightTest">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.testmadness.testcase.BookFlightTest@4cc77c2e]" name="beforeClass" is-config="true" duration-ms="1661" started-at="2018-04-04T23:27:42Z" finished-at="2018-04-04T23:27:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="fReadParameters(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.testmadness.testcase.BookFlightTest@4cc77c2e]" name="fReadParameters" is-config="true" duration-ms="148" started-at="2018-04-04T23:27:43Z" finished-at="2018-04-04T23:27:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ilbq7890.eaas.amdocs.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[28501]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Extra Param Value]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fReadParameters -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.testmadness.testcase.BookFlightTest@4cc77c2e]" name="beforeMethod" is-config="true" duration-ms="191" started-at="2018-04-04T23:27:44Z" finished-at="2018-04-04T23:27:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.testmadness.testcase.BookFlightTest.firstTestCase()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="FAIL" signature="firstTestCase()[pri:0, instance:com.testmadness.testcase.BookFlightTest@4cc77c2e]" name="firstTestCase" duration-ms="102830" started-at="2018-04-04T23:27:44Z" finished-at="2018-04-04T23:29:27Z">
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[Unable to parse remote response: <html>
+<head><title>502 Bad Gateway</title></head>
+<body bgcolor="white">
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx/1.10.3 (Ubuntu)</center>
+</body>
+</html>
+
+Build info: version: 'unknown', revision: 'unknown', time: 'unknown'
+System info: host: 'CAPTAIN', ip: '172.22.80.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_101'
+Driver info: driver.version: RemoteWebDriver]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: Unable to parse remote response: <html>
+<head><title>502 Bad Gateway</title></head>
+<body bgcolor="white">
+<center><h1>502 Bad Gateway</h1></center>
+<hr><center>nginx/1.10.3 (Ubuntu)</center>
+</body>
+</html>
+
+Build info: version: 'unknown', revision: 'unknown', time: 'unknown'
+System info: host: 'CAPTAIN', ip: '172.22.80.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_101'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:353)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:159)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:637)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:250)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:236)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:137)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:174)
+	at com.testmadness.base.BasePage.getDriver(BasePage.java:107)
+	at com.testmadness.base.BasePage.<init>(BasePage.java:55)
+	at com.testmadness.pages.HomePage.<init>(HomePage.java:14)
+	at com.testmadness.testcase.BookFlightTest.firstTestCase(BookFlightTest.java:54)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- firstTestCase -->
+        <test-method status="FAIL" signature="afterMethod()[pri:0, instance:com.testmadness.testcase.BookFlightTest@4cc77c2e]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-04-04T23:29:27Z" finished-at="2018-04-04T23:29:27Z">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+	at com.testmadness.testcase.BookFlightTest.afterMethod(BookFlightTest.java:92)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:564)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:786)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- com.testmadness.testcase.BookFlightTest -->
+    </test> <!-- New Tours Test Execution -->
+  </suite> <!-- NewTours_1 -->
+</testng-results>

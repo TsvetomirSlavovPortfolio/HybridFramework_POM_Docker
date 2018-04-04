@@ -21,6 +21,7 @@
 		<webdriver.safari.driver>${basedir}/resources/drivers/safari/</webdriver.safari.driver>
 		<webdriver.firefox.driver>${basedir}/resources/drivers/firefox/geckodriver.exe</webdriver.firefox.driver>
 		<webdriver.chrome.driver>${basedir}/resources/drivers/chrome/chromedriver.exe</webdriver.chrome.driver>
+		<remotewebdriver.hostname.port>localhost:4446</remotewebdriver.hostname.port>
 		<logfoldername>logfoldername</logfoldername>
 		<logfilename>logfilename</logfilename>
 	</properties>

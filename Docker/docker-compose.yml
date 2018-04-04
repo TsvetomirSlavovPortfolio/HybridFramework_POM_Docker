@@ -4,24 +4,30 @@
 
 #selenium-hub: equivalent to manually running the command docker run -d -p 4444:4444 --name selenium-hub  -P selenium/hub
 selenium-hub:
-  restart: always
-  image: selenium/hub:latest
+  #restart: always
+  image: selenium/hub:3.11.0-californium
   ports:
     - 4444:4444
 #selenium-chrome equivalent to manually running the command docker run -d --link selenium-hub:hub -P --name chrome selenium/node-chrome-debug
-chrome:
-  restart: always
-  image: selenium/node-chrome-debug
+chromenode:
+  #restart: always
+  image: selenium/node-chrome-debug:3.11.0-californium
+  environment:
+    - NODE_MAX_INSTANCE=5
+    - NODE_MAX_SESSION=5
   ports:
     - 5900
-  stdin_open: true
+  #stdin_open: true
   links:
     - selenium-hub:hub
     
 #selenium-firefox equivalent to manually running the command docker run -d --link selenium-hub:hub -P --name firefox selenium/node-firefox-debug
-firefox:
-  restart: always
-  image: selenium/node-firefox-debug
+firefoxnode:
+  #restart: always
+  image: selenium/node-firefox-debug:3.11.0-californium
+  environment:
+    - NODE_MAX_INSTANCE=5
+    - NODE_MAX_SESSION=5
   ports:
     - 5900
   links:

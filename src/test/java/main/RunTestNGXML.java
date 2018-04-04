@@ -2,6 +2,7 @@ package main;
 
 import com.beust.jcommander.internal.Lists;
 
+import org.testng.TestListenerAdapter;
 import org.testng.TestNG;
 import org.testng.xml.XmlClass;
 import org.testng.xml.XmlInclude;
@@ -23,14 +24,25 @@ public class RunTestNGXML
 	{
 		
 		TestNG testng = new TestNG();
+        TestListenerAdapter adapter = new TestListenerAdapter();
+        List<String> suites = new ArrayList<String>();
+        System.out.println("Executing TestNG Suite File = "+args[0]);
+        testng.addListener(adapter);
+        suites.add(args[0]);
+        testng.setTestSuites(suites);
+        testng.setParallel("parallel");
+        testng.setSuiteThreadPoolSize(5);
+        testng.setOutputDirectory(System.getProperty("user.dir")+"/Reports");
+        testng.run();
+		
+		
+/*		TestNG testng = new TestNG();
 		List<String> suites = Lists.newArrayList();
-		//CreateTestNGXML("ilbq7890.eaas.amdocs.com", "28501", "Extra Param Value");
-		//CreateTestNGXML(args[0], args[1], args[2]);
-		//String testNGFile = System.getProperty("user.dir") + "\\"+tesNGFileName;		
 		System.out.println("Executing TestNG Suite File = "+args[0]);
 		suites.add(args[0]);
 		testng.setTestSuites(suites);
-		testng.run();
+		testng.run();*/
+		
 		
 		
 /*		TestNG testng = new TestNG();

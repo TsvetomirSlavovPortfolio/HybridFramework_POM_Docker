@@ -1,8 +1,11 @@
 package com.testmadness.base;
 
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -10,6 +13,8 @@ import java.util.concurrent.TimeUnit;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.Platform;
+import org.openqa.selenium.Proxy;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,6 +22,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -28,6 +36,7 @@ import com.testmadness.utils.Config;
 import com.testmadness.utils.Constants;
 import com.testmadness.utils.Log;
 import com.testmadness.utils.Reports;
+
 
 
 public class BasePage 
@@ -60,6 +69,68 @@ public class BasePage
 			System.setProperty("webdriver.safari.driver", Config.getProp().getProperty("webdriver.safari.driver"));
 			driver = new SafariDriver();
 			driver.manage().window().maximize();
+			driver.manage().timeouts().pageLoadTimeout(pageTimeOutWait, TimeUnit.SECONDS);
+		}
+		else if(browser.equals("IEXPLORER"))
+		{
+			System.setProperty("webdriver.ie.driver", "C:/absolute/path/to/binary/IEDriverServer.exe");
+			//WebDriverManager.iedriver().arch64().setup();
+			/*			DesiredCapabilities caps = DesiredCapabilities.internetExplorer(); 
+			caps.setCapability(InternetExplorerDriver.INITIAL_BROWSER_URL, "");
+			caps.setCapability(InternetExplorerDriver.LOG_LEVEL, "DEBUG");
+			WebDriver driver = new InternetExplorerDriver(caps);*/
+			driver = new InternetExplorerDriver();
+			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(pageTimeOutWait, TimeUnit.SECONDS);
+		}
+		else if(browser.equals("FIREFOX"))
+		{
+			System.setProperty("webdriver.gecko.driver", Config.getProp().getProperty("webdriver.firefox.driver"));
+			//WebDriverManager.firefoxdriver().arch32().setup();
+			driver = new FirefoxDriver();
+			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(pageTimeOutWait, TimeUnit.SECONDS);
+			driver.manage().timeouts().pageLoadTimeout(pageTimeOutWait, TimeUnit.SECONDS);
+		}
+		else if(browser.equals("CHROME"))
+		{	
+			try {
+				DesiredCapabilities capability = DesiredCapabilities.chrome();
+				capability.setPlatform(Platform.LINUX);
+				
+/*				Proxy proxy = new Proxy();
+				proxy.setHttpProxy("genproxy:8080");
+				capability.setBrowserName("chrome");
+				capability.setCapability(CapabilityType.PROXY,proxy);*/
+				
+					
+				driver = new RemoteWebDriver(new URL("http://"+Config.getProp().getProperty("remotewebdriver.hostname.port")+"/wd/hub"), capability);
+				driver.manage().timeouts().implicitlyWait(pageTimeOutWait, TimeUnit.SECONDS);
+				driver.manage().window().maximize();
+				driver.manage().timeouts().pageLoadTimeout(pageTimeOutWait, TimeUnit.SECONDS);
+				
+			} catch (MalformedURLException e) 
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		return driver;
+	}
+
+
+
+	/*	public WebDriver getDriver()
+	{
+
+		String browser = Config.getProp().getProperty("selenium.browser");
+
+		if(browser.equals("SAFARI"))
+		{
+			System.setProperty("webdriver.safari.driver", Config.getProp().getProperty("webdriver.safari.driver"));
+			driver = new SafariDriver();
+			driver.manage().window().maximize();
 			//Setting page load time out
 			driver.manage().timeouts().pageLoadTimeout(pageTimeOutWait, TimeUnit.SECONDS);
 		}
@@ -67,10 +138,10 @@ public class BasePage
 		{
 			System.setProperty("webdriver.ie.driver", "C:/absolute/path/to/binary/IEDriverServer.exe");
 			//WebDriverManager.iedriver().arch64().setup();
-/*			DesiredCapabilities caps = DesiredCapabilities.internetExplorer(); 
+			DesiredCapabilities caps = DesiredCapabilities.internetExplorer(); 
 			caps.setCapability(InternetExplorerDriver.INITIAL_BROWSER_URL, "");
 			caps.setCapability(InternetExplorerDriver.LOG_LEVEL, "DEBUG");
-			WebDriver driver = new InternetExplorerDriver(caps);*/
+			WebDriver driver = new InternetExplorerDriver(caps);
 			driver = new InternetExplorerDriver();
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(pageTimeOutWait, TimeUnit.SECONDS);
@@ -111,6 +182,8 @@ public class BasePage
 
 		return driver;
 	}
+
+	 */
 
 	// Wait for Element to be clickable
 	public WebElement waitForElement(WebElement element) 
