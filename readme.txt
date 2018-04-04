@@ -1,4 +1,4 @@
-Functionality in Hybrid Framework:
+Functionality in Hybrid Framework: 
 
 
 Maven project. We will not download individual jars as we did earlier, rather we will add dependencies in our pom.xml file.
